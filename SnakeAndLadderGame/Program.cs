@@ -101,6 +101,7 @@
                 {
                     case IS_NO_PLAY:
                         position = CheckNoPlay(position, dice);
+                        //If the dice reaches 100 the loop ends, player won
                         if (CheckWin(position))
                         {
                             Console.WriteLine("You won");
@@ -109,18 +110,18 @@
                         break;
                     case IS_LADDER:
                         rollDiceCount += 1;
-                        Console.WriteLine("Position Before Snake and Ladder is " + position);
+                        Console.WriteLine("Position Before Snake and Ladder is " + position +"\n");
                         position = CheckLadder(position);
-                        Console.WriteLine("Position After Snake and Ladder is " + position);
+                        Console.WriteLine("Position After Snake and Ladder is " + position +"\n");
                         break;
                     case IS_SNAKE:
-                        Console.WriteLine("Position Before Snake and Ladder is " + position);
+                        Console.WriteLine("Position Before Snake and Ladder is " + position + "\n");
                         position = CheckLadder(position);
-                        Console.WriteLine("Position After Snake and Ladder is " + position);
+                        Console.WriteLine("Position After Snake and Ladder is " + position + "\n");
                         break;
 
                 }
-                Console.WriteLine("The Number of Time Dice was played is " + rollDiceCount);
+                Console.WriteLine("The Number of Time Dice was played is " + rollDiceCount + "\n");
             }
         }
     }
