@@ -10,6 +10,10 @@
             int playerOne;
             playerOne = position;
             Console.WriteLine("Position of PlayerOne is : " + playerOne +"\n");
+
+            Random random = new Random();
+            int rollsDice = random.Next(0, 7);
+            Console.WriteLine("Rolled Dice number is : " +rollsDice +"\n");
         }
     }
 }
