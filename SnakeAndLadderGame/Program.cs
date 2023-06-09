@@ -88,10 +88,12 @@
             Console.WriteLine("Welcome to Snake And Ladder Game\n");
 
             int position = 0;
+            int rollDiceCount = 0;
+
             while (true)
             {
                 int dice = RollDice();
-                
+                rollDiceCount++;
                 Random random = new Random();
                 int options = random.Next(0,3);
 
@@ -106,6 +108,7 @@
                         }
                         break;
                     case IS_LADDER:
+                        rollDiceCount += 1;
                         Console.WriteLine("Position Before Snake and Ladder is " + position);
                         position = CheckLadder(position);
                         Console.WriteLine("Position After Snake and Ladder is " + position);
@@ -114,8 +117,10 @@
                         Console.WriteLine("Position Before Snake and Ladder is " + position);
                         position = CheckLadder(position);
                         Console.WriteLine("Position After Snake and Ladder is " + position);
-                        break;  
+                        break;
+
                 }
+                Console.WriteLine("The Number of Time Dice was played is " + rollDiceCount);
             }
         }
     }
